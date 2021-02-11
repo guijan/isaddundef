@@ -44,7 +44,7 @@ isaddundef(int _a, int _b)
 	 * On other signed encodings, if the sum results in just the sign bit
 	 * being set, there's overflow into negative zero.
 	 */
-	if (sum != 0 && (sum ^ deadtest) == 0)
+	if (deadtest != 0 && sum == deadtest)
 		return (1);
 	return ((~(a ^ b) & (sum ^ a)) >> shift);
 }
