@@ -23,7 +23,10 @@
  * 2 on two's complement.
  * 3 on sign and magnitude.
  */
-#define COMPLEMENT (~1 == -1 ? 1 : (~1 + 1) == -1 ? 2 : 3)
+enum {
+	COMPLEMENT = (~1 == -1 ? 1 : (~1 + 1) == -1 ? 2 : 3)
+};
+
 
 /* isaddundef: does _a+_b overflow? */
 int
